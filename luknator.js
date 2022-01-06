@@ -1179,7 +1179,7 @@ var JuarezPlugin = function ($) {
             var date = new Date();
             date.setTime(date.getDate() + (expDays * 24 * 60 * 60 * 1000));
             var expires = "expires=" + date.toUTCString();
-            document.cookie = name + "=" + value + ";" + expires + ";"
+            document.cookie = name + "=" + value + ";" + expires + ";";
         }
         luknator.prototype.createUUID = function() {
             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {

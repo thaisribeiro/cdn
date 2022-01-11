@@ -1169,9 +1169,9 @@ var JuarezPlugin = function ($) {
                 ml2_sid_c = decodeURIComponent(b.replace("ml2_sid_c=", ""));
                 return ml2_sid_c;
             }
-
-            document.cookie = this.createUUID();
-            this.setCookie('chat_user_uuid', chat_user_uuid, 365);
+	    
+	    var chat_user_uuid = this.createUUID();
+            document.cookie = chat_user_uuid;
             return chat_user_uuid;
         }
 

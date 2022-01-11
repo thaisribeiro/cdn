@@ -1171,7 +1171,7 @@ var JuarezPlugin = function ($) {
             }
 	    
 	    var chat_user_uuid = this.createUUID();
-            document.cookie = chat_user_uuid;
+	    this.setCookie('chat_user_uuid', chat_user_uuid, 365);
             return chat_user_uuid;
         }
 
@@ -1179,7 +1179,7 @@ var JuarezPlugin = function ($) {
             var date = new Date();
             date.setTime(date.getDate() + (expDays * 24 * 60 * 60 * 1000));
             var expires = "expires=" + date.toUTCString();
-            document.cookie = name + "=" + value + ";" + expires + ";";
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
         }
         luknator.prototype.createUUID = function() {
             return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {

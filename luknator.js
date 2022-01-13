@@ -1101,10 +1101,15 @@ var JuarezPlugin = function ($) {
 
         // Bind Coin
         this.$('#chat-coin-icon').off().on('click', function() {
+	    this.handleCookieUserUnique();
             if ($('.box-alert').length) {
                 setTimeout(function () {
                     $('.box-alert').slideUp("slow", function () { $(this).remove(); });
                 }, hide_alert_delay);
+            }
+		
+	    if (ml2_sid_c != undefined) {
+                this.url += '?ml2_sid_c=' + ml2_sid_c
             }
 
             if (this.$('#chat-widget').hasClass('out') === true) {
